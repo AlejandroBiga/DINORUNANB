@@ -57,10 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\Ground.cs" />
+    <Compile Include="Assets\scripts\Destroy.cs" />
     <Compile Include="Assets\scripts\dino.cs" />
     <Compile Include="Assets\scripts\scroll.cs" />
     <Compile Include="Assets\scripts\ObstacleSpawner.cs" />
-    <Compile Include="Assets\scripts\Destroy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
