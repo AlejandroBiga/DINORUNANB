@@ -41,4 +41,14 @@ public class dino : MonoBehaviour
 
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            GameManager.Instance.ShowGameOverScreen();
+            dinoAnimator.SetTrigger("death");
+            Time.timeScale = 0f;
+        }
+    }
 }
