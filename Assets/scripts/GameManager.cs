@@ -54,4 +54,10 @@ public class GameManager : MonoBehaviour
         score = (int)(timer * scorePerSeconds);
         ScoreText.text = string.Format("{0:00000}", score);
     }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }
