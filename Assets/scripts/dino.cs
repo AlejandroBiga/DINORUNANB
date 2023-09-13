@@ -12,14 +12,14 @@ public class dino : MonoBehaviour
 
     private Rigidbody2D DinoRG;
     private Animator dinoAnimator;
-    // Start is called before the first frame update
+    
     void Start()
     {
         DinoRG = GetComponent<Rigidbody2D>();
         dinoAnimator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
 

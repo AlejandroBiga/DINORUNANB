@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\Ground.cs" />
+    <Compile Include="Assets\scripts\ObjectPool.cs" />
     <Compile Include="Assets\scripts\GameManager.cs" />
     <Compile Include="Assets\scripts\dino.cs" />
     <Compile Include="Assets\scripts\scroll.cs" />
     <Compile Include="Assets\scripts\ObstacleSpawner.cs" />
-    <Compile Include="Assets\scripts\ObjectPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

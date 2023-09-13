@@ -12,18 +12,18 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Start()
     {
-        // Llama a la función SpawnObject() cada 'spawnInterval' segundos.
+        
         InvokeRepeating("SpawnObject", 0f, spawnInterval);
     }
 
     void SpawnObject()
     {
-        // Obtiene un objeto del Object Pool (usando el singleton).
+       
         GameObject spawnedObject = ObjectPool.SharedInstance.GetPooledObject();
 
         if (spawnedObject != null)
         {
-            // Establece la posición y la rotación del objeto y lo activa.
+            
             spawnedObject.transform.position = spawnPoint.position;
             spawnedObject.transform.rotation = Quaternion.identity;
             spawnedObject.SetActive(true);
@@ -35,7 +35,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(objectLifetime);
 
-        // Desactiva el objeto después de 'objectLifetime' segundos.
+        
         objToDeactivate.SetActive(false);
     }
 
