@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
     guid: 7714e174b3430b34ea47b13e615f12cd
   - enabled: 1
-    path: Assets/dinorunporjct.unity
+    path: Assets/Scenes/dinorunporjct.unity
     guid: feb1a0d8beb0ee54ca68596be0df7706
   m_configObjects: {}

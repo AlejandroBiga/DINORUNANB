@@ -4,23 +4,40 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] obstacles;
-    // Start is called before the first frame update
+
+    public Transform spawnPoint; 
+
+    private float spawnInterval = 1.0f;
+    public float objectLifetime = 5.0f;
+
     void Start()
     {
-        StartCoroutine(SpawnObstacle());
+        // Llama a la función SpawnObject() cada 'spawnInterval' segundos.
+        InvokeRepeating("SpawnObject", 0f, spawnInterval);
     }
 
-    // Update is called once per frame
-    private IEnumerator SpawnObstacle()
+    void SpawnObject()
     {
-        while (true)
-        {
-            int randomIndex = Random.Range(0, obstacles.Length);
-            Instantiate(obstacles[randomIndex], transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(1f);
-        }
+        // Obtiene un objeto del Object Pool (usando el singleton).
+        GameObject spawnedObject = ObjectPool.SharedInstance.GetPooledObject();
 
-        
+        if (spawnedObject != null)
+        {
+            // Establece la posición y la rotación del objeto y lo activa.
+            spawnedObject.transform.position = spawnPoint.position;
+            spawnedObject.transform.rotation = Quaternion.identity;
+            spawnedObject.SetActive(true);
+
+            StartCoroutine(DeactivateObject(spawnedObject));
+        }
     }
+    IEnumerator DeactivateObject(GameObject objToDeactivate)
+    {
+        yield return new WaitForSeconds(objectLifetime);
+
+        // Desactiva el objeto después de 'objectLifetime' segundos.
+        objToDeactivate.SetActive(false);
+    }
+
+
 }
